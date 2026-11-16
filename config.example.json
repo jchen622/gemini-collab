@@ -1,0 +1,15 @@
+{
+  "_comment": "Copy to collab.config.json and fill in. Env vars GEMINI_COLLAB_PROJECT / _LOCATION / _MODEL override anything here.",
+
+  "project": "your-gcp-project-id",
+  "location": "global",
+  "model": "gemini-2.5-flash",
+
+  "_blocked_paths": "Substrings of absolute paths whose content must NEVER be sent. Matched case-sensitively against the resolved path. A file under any of these is refused outright, with no override flag. Leaving this empty means nothing is blocked: decide deliberately.",
+  "blocked_paths": [],
+
+  "_content_hints": "[regex, label] pairs added to the free-form content scan, for identifiers that signal sensitive material in your environment. The scan only prints a warning beside the send banner. It is a hint, never a clearance.",
+  "content_hints": [
+    ["\\bACME-\\d{4,}\\b", "internal project code"]
+  ]
+}
